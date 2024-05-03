@@ -199,6 +199,8 @@ export default Vue.extend({
       let selectedIndex =
         this.selectedMapIndices[this.selectedMapIndices.length - 1];
 
+      const showResult = () => {};
+
       // Create Roll Timeout Function and Execute
       const roll = (numberOfCyclesLeft: number) => {
         // Select Corresponding Index to Highlight

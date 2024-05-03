@@ -1,6 +1,10 @@
 <template>
   <div>
-    <v-card :maxHeight="height" :max-width="width">
+    <v-card
+      :maxHeight="height"
+      :max-width="width"
+      :class="isSelected ? 'spinner-card-selected' : 'spinner-card'"
+    >
       <v-img :height="height" :width="width" :src="backgroundImageUrl">
         <v-card-title class="spinner-card-label">{{ label }}</v-card-title>
         <div
@@ -85,5 +89,17 @@ export default Vue.extend({
     rgba(255, 255, 255, 0) 0%,
     rgba(184, 0, 255, 0.3) 100%
   );
+}
+
+.spinner-card {
+  transition: transform 0.5s ease-in-out;
+  .selected {
+    transform: translateX(30px);
+  }
+}
+
+.spinner-card-selected {
+  transition: transform 0.05s ease;
+  transform: translateX(30px);
 }
 </style>
